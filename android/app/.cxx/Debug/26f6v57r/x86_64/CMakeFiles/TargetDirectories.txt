@@ -1,0 +1,2 @@
+/Users/mohamed/StudioProjects/Echovision-1/android/app/.cxx/Debug/26f6v57r/x86_64/CMakeFiles/edit_cache.dir
+/Users/mohamed/StudioProjects/Echovision-1/android/app/.cxx/Debug/26f6v57r/x86_64/CMakeFiles/rebuild_cache.dir

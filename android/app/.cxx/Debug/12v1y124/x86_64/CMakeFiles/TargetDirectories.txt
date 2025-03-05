@@ -1,0 +1,2 @@
+/Users/mohamed/Downloads/EchoVision-Mobile-Application-master/android/app/.cxx/Debug/12v1y124/x86_64/CMakeFiles/edit_cache.dir
+/Users/mohamed/Downloads/EchoVision-Mobile-Application-master/android/app/.cxx/Debug/12v1y124/x86_64/CMakeFiles/rebuild_cache.dir

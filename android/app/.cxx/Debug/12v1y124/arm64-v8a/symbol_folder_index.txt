@@ -1,0 +1,1 @@
+/Users/mohamed/Downloads/EchoVision-Mobile-Application-master/build/app/intermediates/cxx/Debug/12v1y124/obj/arm64-v8a
