@@ -1,0 +1,1 @@
+/Users/mohamed/StudioProjects/EchoVision-Mobile-Application/build/app/intermediates/cxx/Debug/3y4j5971/obj/arm64-v8a
