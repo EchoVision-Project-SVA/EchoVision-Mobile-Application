@@ -104,9 +104,7 @@ class HomePage extends StatelessWidget {
                 child: Text(
                   "Upload Video",
                   style: TextStyle(
-                    color: Colors.blueAccent,
-                    fontWeight: FontWeight.bold
-                  ),
+                      color: Colors.blueAccent, fontWeight: FontWeight.bold),
                 ),
               ),
               SizedBox(height: 20),

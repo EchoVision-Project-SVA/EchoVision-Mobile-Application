@@ -1,10 +1,9 @@
 import 'package:echovision/app/controllers/login_controller.dart';
 import 'package:echovision/app/screens/LanguageSwitch.dart';
+import 'package:echovision/app/screens/viduo_upload.dart';
 import 'package:echovision/locale/locale_controlar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -29,9 +28,10 @@ class _LoginScreenState extends State<LoginScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-               
                   Obx(() {
-                    bool isArabic = localeController.currentLocale.value.languageCode == 'ar';
+                    bool isArabic =
+                        localeController.currentLocale.value.languageCode ==
+                            'ar';
                     return LanguageSwitch(
                       isArabic: isArabic,
                       onChanged: (bool newValue) {
@@ -52,13 +52,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 157,
               ),
               const SizedBox(height: 20),
-               Text(
+              Text(
                 "1".tr,
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 45),
               TextField(
-                decoration:  InputDecoration(
+                decoration: InputDecoration(
                   labelText: "2".tr,
                   border: OutlineInputBorder(),
                 ),
@@ -73,7 +73,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   labelText: "3".tr,
                   border: const OutlineInputBorder(),
                   suffixIcon: IconButton(
-                    icon: Icon(_isObscure ? Icons.visibility_off : Icons.visibility),
+                    icon: Icon(
+                        _isObscure ? Icons.visibility_off : Icons.visibility),
                     onPressed: () {
                       setState(() {
                         _isObscure = !_isObscure;
@@ -100,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       : () async {
                           await loginController.login();
                           if (loginController.errorMessage.value.isEmpty) {
-                            Get.offAll(() => HomePage());
+                            Get.offAll(() => Video());
                           }
                         },
                   style: ElevatedButton.styleFrom(
@@ -112,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   child: loginController.isLoading.value
                       ? const CircularProgressIndicator(color: Colors.white)
-                      :  Text(
+                      : Text(
                           "4".tr,
                           style: TextStyle(color: Colors.white, fontSize: 16),
                         ),
