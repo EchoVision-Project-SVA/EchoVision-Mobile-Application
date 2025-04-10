@@ -113,7 +113,7 @@ class ResultPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
-                            "Text result:",
+                            "Text",
                             style: TextStyle(
                               fontSize: 16, 
                               fontWeight: FontWeight.bold,
