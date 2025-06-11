@@ -15,7 +15,7 @@ class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localeController = Get.find<Mylocalecontrol>();
-    // استرجاع نفس المتحكم الذي تم إنشاؤه في صفحة رفع الفيديو
+
     final PredictController controller = Get.find<PredictController>();
         final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
@@ -65,7 +65,7 @@ class ResultPage extends StatelessWidget {
         child: Container(
         width: double.infinity,
             height: double.infinity,
-            // الخلفية بصورة ثابتة
+
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/Images/BACKGRAWIND.png"),
@@ -75,10 +75,10 @@ class ResultPage extends StatelessWidget {
           child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
               child: Column(
-                // توزيع العناصر عمودياً مع تباعد مناسب
+            
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // عرض الصورة sort.svg مع فتح الـ Drawer عند النقر عليها
+            
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -105,7 +105,7 @@ class ResultPage extends StatelessWidget {
                   SizedBox(height: 200,),
                 Expanded(
                   child: Obx(() {
-                    // عرض مؤشر التحميل في حالة استمرار العملية
+            
                     if (controller.isLoading.value) {
                       return const Center(child: CircularProgressIndicator());
                     } else {
@@ -122,7 +122,7 @@ class ResultPage extends StatelessWidget {
                           const SizedBox(height: 8),
                           Text(controller.resultText.value),
                           const SizedBox(height: 20),
-                          // عرض مشغل الصوت في حالة وجود رابط للصوت
+    
                           if (controller.audioUrl.value.isNotEmpty)
                             AudioPlayerWidget(audioPlayer: controller.audioPlayer),
                         ],
@@ -156,7 +156,6 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
   @override
   void initState() {
     super.initState();
-    // متابعة حالة التشغيل لتحديث أيقونة الزر وشريط التقدم
     widget.audioPlayer.playerStateStream.listen((state) {
       setState(() {
         isPlaying = state.playing;

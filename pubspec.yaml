@@ -28,9 +28,9 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/Images/logo.png"          # مسار الأيقونة
-  adaptive_icon_background: "#FFFFFF"           # خلفية بيضا للأيقونة التكيفية
-  adaptive_icon_foreground: "assets/Images/logo.png"  # أيقونة الواجهة التكيفية
+  image_path: "assets/Images/logo.png"         
+  adaptive_icon_background: "#FFFFFF"          
+  adaptive_icon_foreground: "assets/Images/logo.png"  
   remove_alpha_ios: true
 
 flutter:

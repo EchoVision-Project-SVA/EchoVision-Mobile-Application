@@ -153,7 +153,6 @@ class _AnimatedUploadButtonState extends State<AnimatedUploadButton>
   @override
   void initState() {
     super.initState();
-    // إنشاء AnimationController بمدة 2 ثانية وتكرار الحركة بلا نهاية
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
@@ -166,7 +165,6 @@ class _AnimatedUploadButtonState extends State<AnimatedUploadButton>
     super.dispose();
   }
 
-  /// دالة لإنشاء تأثير الدائرة الواحدة مع تأخير ولون معين
   Widget buildRipple(double delay, Color color) {
     return AnimatedBuilder(
       animation: _controller,

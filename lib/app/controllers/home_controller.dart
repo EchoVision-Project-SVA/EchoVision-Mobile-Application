@@ -22,7 +22,6 @@ class PredictController extends GetxController {
     });
   }
 
-  // دالة اختيار الفيديو من المعرض وتشغيل التنبؤ
   Future<void> pickVideoAndPredict() async {
     try {
       final picker = ImagePicker();
@@ -38,32 +37,29 @@ class PredictController extends GetxController {
     }
   }
 
-  // دالة إرسال الفيديو إلى الـ API واستقبال النتيجة مع تحسين معالجة الأخطاء والتحقق من الرابط الصوتي
   Future<void> predict(File videoFile) async {
     isLoading.value = true;
     try {
-      // استخدام http في رابط الـ API
+
       var uri = Uri.parse("http://10.0.2.2:8000/api/predict");
       var request = http.MultipartRequest("POST", uri);
-      // تأكد من اسم الحقل كما يتوقعه السيرفر (مثلاً 'file' أو 'video')
+
       request.files
           .add(await http.MultipartFile.fromPath('file', videoFile.path));
 
       var response = await request.send();
-      // قراءة الاستجابة بالكامل
+
       var responseBody = await response.stream.bytesToString();
 
       if (response.statusCode == 200) {
         try {
           var data = jsonDecode(responseBody);
           resultText.value = data['prediction_text'] ?? '';
-          // استلام الرابط من السيرفر
+
           audioUrl.value = data['audio_file'] ?? '';
 
-          // طباعة الرابط للتأكد
           print("Audio URL received: ${audioUrl.value}");
 
-          // استبدال العنوان إذا كان يحتوي على 127.0.0.1:8000
           if (audioUrl.value.isNotEmpty &&
               audioUrl.value.contains("127.0.0.1:8000")) {
             audioUrl.value =
@@ -71,7 +67,7 @@ class PredictController extends GetxController {
             print("Converted Audio URL: ${audioUrl.value}");
           }
 
-          // التحقق من إمكانية الوصول للرابط عبر طلب GET
+       
           if (audioUrl.value.isNotEmpty) {
             try {
               final audioResponse = await http.get(Uri.parse(audioUrl.value));
@@ -79,7 +75,7 @@ class PredictController extends GetxController {
               print("Content-Type: ${audioResponse.headers['content-type']}");
               if (audioResponse.statusCode == 200) {
                 try {
-                  // محاولة تحميل وتشغيل الصوت
+  
                   await audioPlayer.setUrl(audioUrl.value);
                   audioPlayer.play();
                 } catch (audioError) {

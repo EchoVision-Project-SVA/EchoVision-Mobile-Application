@@ -1,7 +1,5 @@
-// ignore_for_file: library_private_types_in_public_api
 
-import 'package:echovision/app/screens/Upload_Page.dart';
-
+import 'package:echovision/app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'dart:async';
@@ -17,9 +15,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // الانتظار لمدة800 ملي من الثانيه ثم الانتقال للصفحة التالية
     Timer(const Duration(milliseconds: 800), () {
-      Get.to(UploadPage());
+      Get.to(LoginScreen());
     });
   }
 
@@ -28,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: SizedBox.expand(
         child: Image.asset(
-          'assets/Images/SplashScreen.png', // تأكد من صحة المسار وامتداد الصورة
+          'assets/Images/SplashScreen.png',
           fit: BoxFit.cover,
         ),
       ),

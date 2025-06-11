@@ -1,9 +1,11 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:echovision/app/controllers/login_controller.dart';
 import 'package:echovision/app/screens/LanguageSwitch.dart';
-import 'package:echovision/app/screens/viduo_upload.dart';
 import 'package:echovision/locale/locale_controlar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'Upload_Page.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -20,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16),
@@ -101,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       : () async {
                           await loginController.login();
                           if (loginController.errorMessage.value.isEmpty) {
-                            Get.offAll(() => Video());
+                            Get.offAll(() => UploadPage());
                           }
                         },
                   style: ElevatedButton.styleFrom(

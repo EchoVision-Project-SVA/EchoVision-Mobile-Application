@@ -8,7 +8,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:echovision/app/screens/splash_screen.dart';
 
 Future<void> requestPermissions() async {
-  // طلب إذن الكاميرا والميكروفون
+
   Map<Permission, PermissionStatus> statuses = await [
     Permission.camera,
     Permission.microphone,
